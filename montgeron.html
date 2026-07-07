@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estimation immobilière gratuite | Francis Fernandes - Conseiller iad</title>
-<meta name="description" content="Estimez gratuitement votre bien à Draveil, Montgeron, Vigneux-sur-Seine, Ris-Orangis et Juvisy-sur-Orge avec Francis Fernandes, conseiller iad indépendant.">
+<title>Estimation immobilière gratuite à Montgeron | Francis Fernandes - Conseiller iad</title>
+<meta name="description" content="Estimez gratuitement votre maison ou appartement à Montgeron avec Francis Fernandes, conseiller iad indépendant présent sur le secteur.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -129,6 +129,15 @@
     background:radial-gradient(circle at 60% 40%, rgba(11,95,255,.08) 0%, rgba(11,95,255,0) 70%);
     animation:blobMove 18s ease-in-out infinite reverse;pointer-events:none;
   }
+  .hero-watermark{
+    position:absolute;top:0;right:0;width:52%;height:100%;
+    background-image:url('images/montgeron/montgeron-postcard-rue-de-paris.jpg');
+    background-size:cover;background-position:center;
+    opacity:.08;filter:grayscale(1) contrast(1.1);
+    -webkit-mask-image:linear-gradient(to left, black 30%, transparent 90%);
+    mask-image:linear-gradient(to left, black 30%, transparent 90%);
+    pointer-events:none;
+  }
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
   .hero h1{font-size:clamp(2.2rem,4.2vw,3.4rem);font-weight:800;color:var(--iad-navy);line-height:1.08;margin:16px 0 20px;}
   .hero h1 span{color:var(--iad-blue);}
@@ -210,6 +219,44 @@
   }
   .about-contact a:hover{color:var(--iad-blue);}
 
+  /* ===== VILLE MOOD BANNER ===== */
+  .ville-mood{position:relative;height:340px;overflow:hidden;}
+  .ville-mood img{width:100%;height:100%;object-fit:cover;filter:brightness(.75);}
+  .ville-mood-caption{
+    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+    padding:36px;background:linear-gradient(0deg, rgba(7,27,66,.85) 0%, rgba(7,27,66,.1) 60%, transparent 100%);
+  }
+  .ville-mood-caption p{color:#fff;font-size:1.1rem;font-family:'Sora',sans-serif;font-weight:600;max-width:560px;margin-top:8px;}
+
+  /* ===== PHOTO ZONE CARDS ===== */
+  .photo-zone-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .photo-zone-card{
+    position:relative;display:block;border-radius:16px;overflow:hidden;height:220px;
+    text-decoration:none;box-shadow:0 14px 30px -16px rgba(0,0,0,.5);
+  }
+  .photo-zone-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .photo-zone-card:hover img{transform:scale(1.08);}
+  .pzc-caption{
+    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;
+    background:linear-gradient(0deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.05) 65%, transparent 100%);
+  }
+  .pzc-caption h4{color:#fff;font-size:1rem;margin-bottom:3px;}
+  .pzc-caption span{color:rgba(255,255,255,.7);font-size:.76rem;}
+
+  /* ===== HERITAGE CAROUSEL ===== */
+  .heritage-carousel{position:relative;max-width:720px;margin:0 auto;border-radius:20px;overflow:hidden;height:420px;box-shadow:var(--shadow);}
+  .heritage-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;}
+  .heritage-slide.active{opacity:1;}
+  .heritage-slide img{width:100%;height:100%;object-fit:cover;filter:sepia(.15) contrast(1.02);}
+  .heritage-tag{
+    position:absolute;left:20px;bottom:20px;background:rgba(7,27,66,.85);color:#fff;
+    padding:8px 16px;border-radius:100px;font-size:.8rem;font-weight:600;
+  }
+  .heritage-dots{position:absolute;bottom:16px;right:20px;display:flex;gap:8px;}
+  .heritage-dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .2s;}
+  .heritage-dots span.active{background:var(--gold-2);}
+  @media (max-width:640px){ .heritage-carousel{height:300px;} .ville-mood{height:220px;} }
+
   /* ===== ZONES ===== */
   .zones{background:var(--iad-navy);color:#fff;}
   .zones .section-head h2{color:#fff;}
@@ -271,8 +318,18 @@
   .cta-final{
     background:linear-gradient(120deg,var(--iad-blue),var(--iad-navy) 70%);
     border-radius:28px;color:#fff;padding:64px 48px;text-align:center;
-    margin:0 24px;
+    margin:0 24px;position:relative;overflow:hidden;
   }
+  .cta-final::before{
+    content:"";position:absolute;inset:0;
+    background-image:url('images/montgeron/montgeron-chateau-rottembourg.jpg');
+    background-size:cover;background-position:center;
+    opacity:.1;filter:grayscale(.4);
+    mask-image:radial-gradient(circle at 80% 20%, black 0%, transparent 60%);
+    -webkit-mask-image:radial-gradient(circle at 80% 20%, black 0%, transparent 60%);
+    pointer-events:none;
+  }
+  .cta-final > *{position:relative;z-index:1;}
   .cta-final h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:14px;}
   .cta-final p{color:rgba(255,255,255,.75);max-width:520px;margin:0 auto 30px;}
   .cta-final .btn{background:#fff;color:var(--iad-navy);}
@@ -352,7 +409,7 @@
     </div>
     <nav class="links">
       <a href="#simulateur">Estimation</a>
-      <a href="#secteurs">Secteurs</a>
+      <a href="#quartiers">Quartiers</a>
       <a href="#apropos">Francis</a>
       <a href="#propertips">Propertips</a>
       <a href="#avis">Avis clients</a>
@@ -362,19 +419,20 @@
 </header>
 
 <section class="hero">
+  <div class="hero-watermark"></div>
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow reveal in-view">Conseiller iad · Essonne (91)</span>
-      <h1 class="reveal in-view">Votre bien mérite une <span>estimation juste</span>, faite par un expert local.</h1>
-      <p class="lead reveal in-view">Francis Fernandes, conseiller iad indépendant à Draveil, vous accompagne avec la force du 1er réseau immobilier de France et une connaissance fine de votre secteur.</p>
+      <span class="eyebrow reveal in-view">Conseiller iad · Montgeron (91230)</span>
+      <h1 class="reveal in-view">Montgeron mérite une <span>estimation à sa mesure</span>, pas un chiffre générique.</h1>
+      <p class="lead reveal in-view">Ancien lieu de villégiature peint par Monet et Degas, ville-étape du premier Tour de France en 1903 : Montgeron a un cachet particulier, qui se reflète directement dans la valeur de votre bien. Francis Fernandes, conseiller iad du secteur, vous aide à l'évaluer avec précision.</p>
       <div class="hero-cta reveal in-view">
         <a href="#simulateur" class="btn">Estimer gratuitement</a>
         <a href="https://wa.me/33616127718" class="btn ghost">Discuter sur WhatsApp</a>
       </div>
       <div class="trust-strip reveal in-view">
-        <div class="trust-item"><strong data-count="16000">0</strong><span>conseillers iad en France</span></div>
-        <div class="trust-item"><strong data-count="4.9" data-decimal="1">0</strong><span>satisfaction client iad</span></div>
-        <div class="trust-item"><strong data-count="5">0</strong><span>communes couvertes localement</span></div>
+        <div class="trust-item"><strong data-count="3550" data-suffix=" €">0</strong><span>prix moyen au m² à Montgeron</span></div>
+        <div class="trust-item"><strong data-count="23775" data-suffix="">0</strong><span>habitants (Montgeronnais)</span></div>
+        <div class="trust-item"><strong data-count="480" data-suffix=" ha">0</strong><span>de forêt de Sénart à proximité</span></div>
       </div>
     </div>
 
@@ -386,8 +444,8 @@
       <div class="sim-field">
         <label>Votre commune</label>
         <select id="commune">
+          <option value="3550" selected>Montgeron</option>
           <option value="3150">Draveil</option>
-          <option value="3550">Montgeron</option>
           <option value="3100">Vigneux-sur-Seine</option>
           <option value="2300">Ris-Orangis</option>
           <option value="3300">Juvisy-sur-Orge</option>
@@ -396,7 +454,7 @@
       </div>
       <div class="sim-field" id="autre-commune-field" style="display:none;">
         <label>Précisez votre commune</label>
-        <input type="text" id="autre-commune" placeholder="Ex : Vigneux, Corbeil, Athis-Mons...">
+        <input type="text" id="autre-commune" placeholder="Ex : Crosne, Yerres, Brunoy...">
       </div>
       <div class="sim-field">
         <label>Surface habitable (m²)</label>
@@ -409,17 +467,25 @@
         </div>
         <a href="#contact" class="btn" id="affiner-btn" style="background:var(--gold);box-shadow:none;">Affiner avec Francis</a>
       </div>
-      <p class="sim-note">Estimation basée sur les prix moyens constatés localement — une visite reste nécessaire pour un chiffrage précis.</p>
+      <p class="sim-note">Estimation basée sur les prix moyens constatés à Montgeron — une visite reste nécessaire pour un chiffrage précis.</p>
     </div>
+  </div>
+</section>
+
+<section class="ville-mood">
+  <img src="images/montgeron/montgeron-centre-historique.jpg" alt="Centre historique de Montgeron">
+  <div class="ville-mood-caption">
+    <span class="eyebrow" style="color:var(--gold-2);">Montgeron, telle qu'elle est aujourd'hui</span>
+    <p>Le vieux Montgeron, entre clocher, venelles pavées et façades du XIXe siècle.</p>
   </div>
 </section>
 
 <section id="pourquoi">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Pourquoi un conseiller iad</span>
+      <span class="eyebrow">Pourquoi un conseiller iad à Montgeron</span>
       <h2>La puissance d'un grand réseau, la proximité d'un indépendant</h2>
-      <p>iad combine outils digitaux performants, visibilité nationale et accompagnement personnalisé par un conseiller qui connaît votre quartier.</p>
+      <p>iad combine outils digitaux performants, visibilité nationale et accompagnement personnalisé par un conseiller qui connaît vraiment vos quartiers.</p>
     </div>
     <div class="pillars stagger">
       <div class="pillar">
@@ -440,8 +506,8 @@
         <div class="ic">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="white" stroke-width="2"/><path d="M3 9h18M8 4v2M16 4v2" stroke="white" stroke-width="2"/></svg>
         </div>
-        <h3>Expertise du secteur</h3>
-        <p>Draveil, Montgeron, Vigneux, Ris-Orangis, Juvisy : une lecture fine et à jour des prix pratiqués rue par rue.</p>
+        <h3>Expertise de Montgeron</h3>
+        <p>Du centre ancien à la Pelouse, en passant par Chalandray : une lecture fine des prix pratiqués quartier par quartier.</p>
       </div>
     </div>
   </div>
@@ -461,7 +527,7 @@
         <span class="eyebrow">Votre conseiller local</span>
         <h2>Francis Fernandes</h2>
         <p class="role">Agent mandataire iad — Essonne &amp; région Île-de-France</p>
-        <p class="lead" style="max-width:100%;">Plus de 18 ans de présence sur le secteur de Draveil et ses environs. Un interlocuteur unique, joignable directement, pour vendre ou estimer votre bien dans les meilleures conditions.</p>
+        <p class="lead" style="max-width:100%;">Plus de 18 ans de présence sur le secteur de Montgeron et ses environs. Un interlocuteur unique, joignable directement, pour vendre ou estimer votre bien dans les meilleures conditions.</p>
         <div class="about-contact">
           <a href="tel:0616127718">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.1z" stroke="var(--iad-blue)" stroke-width="1.8"/></svg>
@@ -482,20 +548,39 @@
   </div>
 </section>
 
-<section class="zones" id="secteurs">
+<section class="zones" id="quartiers">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" style="color:var(--gold-2)">Zone d'intervention</span>
-      <h2>Prix moyens constatés par commune</h2>
-      <p>Des repères actualisés, secteur par secteur, pour situer votre bien avant toute visite.</p>
+      <span class="eyebrow" style="color:var(--gold-2)">Quartiers de Montgeron</span>
+      <h2>Une ville, plusieurs visages</h2>
+      <p>Montgeron se découpe en quartiers bien distincts, chacun avec son propre marché immobilier.</p>
     </div>
-    <div class="zone-grid stagger">
-      <div class="zone-card"><h4>Draveil</h4><div class="price">3 150 €</div><div class="unit">par m²</div></div>
-      <a href="montgeron.html" class="zone-card" style="display:block;text-decoration:none;color:inherit;"><h4>Montgeron →</h4><div class="price">3 550 €</div><div class="unit">par m² · page dédiée</div></a>
-      <div class="zone-card"><h4>Vigneux-s-Seine</h4><div class="price">3 100 €</div><div class="unit">par m²</div></div>
-      <div class="zone-card"><h4>Ris-Orangis</h4><div class="price">2 300 €</div><div class="unit">par m²</div></div>
-      <div class="zone-card"><h4>Juvisy-s-Orge</h4><div class="price">3 300 €</div><div class="unit">par m²</div></div>
+    <div class="photo-zone-grid stagger">
+      <a href="#" class="photo-zone-card">
+        <img src="images/montgeron/montgeron-centre-historique.jpg" alt="Centre historique de Montgeron">
+        <div class="pzc-caption"><h4>Centre historique</h4><span>Clocher &amp; venelles anciennes</span></div>
+      </a>
+      <a href="#" class="photo-zone-card">
+        <img src="images/montgeron/montgeron-chateau-rottembourg.jpg" alt="Château de Rottembourg à Montgeron">
+        <div class="pzc-caption"><h4>Château de Rottembourg</h4><span>Patrimoine &amp; nature</span></div>
+      </a>
+      <a href="#" class="photo-zone-card">
+        <img src="images/montgeron/montgeron-pelouse.jpg" alt="La Pelouse, allée royale de Montgeron">
+        <div class="pzc-caption"><h4>La Pelouse</h4><span>Ancienne allée royale arborée</span></div>
+      </a>
+      <a href="#" class="photo-zone-card">
+        <img src="images/montgeron/montgeron-marche-st-hubert.jpg" alt="Marché Saint-Hubert à Montgeron">
+        <div class="pzc-caption"><h4>Marché Saint-Hubert</h4><span>Commerces &amp; vie de quartier</span></div>
+      </a>
+      <a href="#" class="photo-zone-card">
+        <img src="images/montgeron/montgeron-mairie.jpg" alt="Hôtel de Ville de Montgeron">
+        <div class="pzc-caption"><h4>Hôtel de Ville</h4><span>Centre administratif</span></div>
+      </a>
     </div>
+    <p style="text-align:center;color:rgba(255,255,255,.55);font-size:.85rem;margin-top:28px;">
+      Vous êtes plutôt à Draveil, Vigneux-sur-Seine ou Ris-Orangis ?
+      <a href="index.html" style="color:var(--gold-2);text-decoration:underline;">Voir l'estimation pour Draveil →</a>
+    </p>
   </div>
 </section>
 
@@ -514,12 +599,42 @@
   </div>
 </section>
 
+<section id="heritage" style="background:var(--iad-navy);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--gold-2);">Une histoire à part</span>
+      <h2 style="color:#fff;">Montgeron, hier &amp; aujourd'hui</h2>
+      <p style="color:rgba(255,255,255,.65);">Ancien lieu de villégiature de la bourgeoisie parisienne, Montgeron a aussi vu naître le tout premier Tour de France, dont le départ fut donné devant le café "Au Réveil Matin" le 1er juillet 1903.</p>
+    </div>
+
+    <div class="heritage-carousel reveal-scale">
+      <div class="heritage-slide active">
+        <img src="images/montgeron/montgeron-postcard-rue-de-paris.jpg" alt="Carte postale ancienne, Rue de Paris à Montgeron">
+        <div class="heritage-tag">Rue de Paris, début XXe siècle</div>
+      </div>
+      <div class="heritage-slide">
+        <img src="images/montgeron/montgeron-postcard-gare.jpg" alt="Carte postale ancienne, la gare de Montgeron">
+        <div class="heritage-tag">La gare de Montgeron, époque 1900</div>
+      </div>
+      <div class="heritage-slide">
+        <img src="images/montgeron/montgeron-reveil-matin-monument.jpg" alt="Monument du Tour de France au Réveil Matin, Montgeron">
+        <div class="heritage-tag">Le monument du 1er Tour de France, aujourd'hui</div>
+      </div>
+      <div class="heritage-slide">
+        <img src="images/montgeron/montgeron-reveil-matin-closeup.jpg" alt="Sculpture commémorative du Tour de France à Montgeron">
+        <div class="heritage-tag">Détail de la sculpture commémorative</div>
+      </div>
+      <div class="heritage-dots"></div>
+    </div>
+  </div>
+</section>
+
 <section id="propertips">
   <div class="wrap">
     <div class="propertips-card reveal">
       <div class="propertips-text">
         <span class="eyebrow" style="color:var(--gold);">Propertips by iad</span>
-        <h2>Vous connaissez quelqu'un qui vend ou achète ?</h2>
+        <h2>Vous connaissez quelqu'un qui vend ou achète à Montgeron ?</h2>
         <p>Recommandez Francis à votre entourage et touchez <strong>jusqu'à 500 € en moyenne</strong> une fois la vente finalisée. Un système simple, ouvert à tous, sans obligation d'être professionnel de l'immobilier.</p>
         <ol class="pt-steps">
           <li><span>1</span> Vous connaissez un vendeur ou un acheteur</li>
@@ -540,14 +655,9 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Avis clients</span>
-      <h2>Ce qu'en disent les vendeurs du secteur</h2>
+      <h2>Ce qu'en disent les vendeurs de Montgeron</h2>
     </div>
     <div class="testi-grid stagger">
-      <div class="testi">
-        <div class="stars">★★★★★</div>
-        <p>"Estimation rapide et honnête, sans survente. Francis connaît vraiment le quartier."</p>
-        <div class="who"><div class="avatar">MC</div><div><strong>M. et Mme C.</strong><span>Vente à Draveil</span></div></div>
-      </div>
       <div class="testi">
         <div class="stars">★★★★★</div>
         <p>"Disponible, réactif, et un vrai suivi jusqu'à la signature. Rien à redire."</p>
@@ -555,8 +665,13 @@
       </div>
       <div class="testi">
         <div class="stars">★★★★★</div>
-        <p>"Un accompagnement clair du début à la fin, on sentait l'appui d'un vrai réseau derrière."</p>
-        <div class="who"><div class="avatar">JD</div><div><strong>J. Dubois</strong><span>Vente à Vigneux-sur-Seine</span></div></div>
+        <p>"Francis a été disponible, réactif et clair dès le départ, ce qui nous a rassurés à chaque étape de notre achat."</p>
+        <div class="who"><div class="avatar">CM</div><div><strong>Christie &amp; Moïse</strong><span>Achat à Montgeron</span></div></div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"Estimation rapide et honnête, sans survente. Francis connaît vraiment le secteur."</p>
+        <div class="who"><div class="avatar">MC</div><div><strong>M. et Mme C.</strong><span>Vente à Draveil</span></div></div>
       </div>
     </div>
   </div>
@@ -564,7 +679,7 @@
 
 <section id="contact">
   <div class="cta-final reveal-scale">
-    <h2>Prêt à connaître la vraie valeur de votre bien ?</h2>
+    <h2>Prêt à connaître la vraie valeur de votre bien à Montgeron ?</h2>
     <p>Estimation gratuite, sans engagement, réalisée par un conseiller iad présent sur votre secteur.</p>
 
     <form id="leadForm" class="lead-form">
@@ -573,7 +688,7 @@
         <input type="tel" id="tel" placeholder="Votre téléphone" required>
       </div>
       <div class="lead-row">
-        <input type="text" id="ville" placeholder="Votre commune">
+        <input type="text" id="ville" placeholder="Votre commune" value="Montgeron">
         <select id="type">
           <option value="">Type de bien</option>
           <option value="Maison">Maison</option>
@@ -615,14 +730,14 @@
           <img src="images/iad-logo.png" alt="iad" class="logo-img">
           <div>iad <small style="color:rgba(255,255,255,.5)">FRANCIS FERNANDES</small></div>
         </div>
-        <p style="max-width:280px;">Conseiller immobilier indépendant du réseau iad, au service de Draveil et ses environs.</p>
+        <p style="max-width:280px;">Conseiller immobilier indépendant du réseau iad, au service de Montgeron et ses environs.</p>
       </div>
       <div>
         <h4>Secteurs</h4>
-        <a href="#secteurs">Draveil</a>
+        <a href="index.html">Draveil</a>
         <a href="montgeron.html">Montgeron</a>
-        <a href="#secteurs">Vigneux-sur-Seine</a>
-        <a href="#secteurs">Ris-Orangis</a>
+        <a href="index.html#secteurs">Vigneux-sur-Seine</a>
+        <a href="index.html#secteurs">Ris-Orangis</a>
       </div>
       <div>
         <h4>Services</h4>
@@ -781,7 +896,36 @@
       document.getElementById('successState').classList.add('active');
     });
   }
+  /* ===== Carrousel "Montgeron hier & aujourd'hui" ===== */
+  (function(){
+    var slides = document.querySelectorAll('.heritage-slide');
+    if(!slides.length) return;
+    var dotsWrap = document.querySelector('.heritage-dots');
+    var current = 0;
 
+    slides.forEach(function(_, i){
+      var dot = document.createElement('span');
+      if(i === 0) dot.classList.add('active');
+      dot.addEventListener('click', function(){ goTo(i); });
+      dotsWrap.appendChild(dot);
+    });
+    var dots = dotsWrap.querySelectorAll('span');
+
+    function goTo(index){
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!reduceMotion){
+      setInterval(function(){
+        goTo((current + 1) % slides.length);
+      }, 4200);
+    }
+  })();
 </script>
 
 </body>
