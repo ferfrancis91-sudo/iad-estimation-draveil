@@ -72,7 +72,7 @@
   }
   .hero-watermark::before{
     content:"";position:absolute;inset:-5%;
-    background-image:url('images/draveil-champrosay-grande-rue.jpg');
+    background-image:url('images/champrosay-grande-rue.jpg');
     background-size:cover;background-position:center;
     opacity:.38;filter:grayscale(.35) contrast(1.08) sepia(.08);
     animation:kenBurns 22s ease-in-out infinite alternate;
@@ -165,6 +165,40 @@
   @media (prefers-reduced-motion: reduce){ .chateau-banner img{animation:none;} }
   @media (max-width:640px){ .chateau-banner{height:360px;} }
 
+  /* ===== CITATION LITTÉRAIRE (filigrane Daudet + touche picturale) ===== */
+  .quote-band{position:relative;background:var(--iad-tint-2);padding:90px 0;overflow:hidden;}
+  .quote-brushstroke{
+    position:absolute;top:-10%;right:-8%;width:60%;height:130%;pointer-events:none;opacity:.35;
+    background:
+      radial-gradient(ellipse 60% 30% at 30% 20%, rgba(11,95,255,.10) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 70% 60%, rgba(197,160,89,.14) 0%, transparent 70%);
+    filter:blur(2px);
+  }
+  .quote-mark{
+    position:absolute;top:-4%;left:2%;font-family:'Tangerine',cursive;font-weight:700;
+    font-size:clamp(8rem,18vw,15rem);color:var(--iad-blue);opacity:.06;line-height:1;pointer-events:none;
+  }
+  .quote-grid{
+    max-width:1080px;margin:0 auto;position:relative;z-index:1;
+    display:grid;grid-template-columns:1fr .85fr;gap:56px;align-items:center;
+  }
+  .quote-wrap{text-align:left;}
+  .quote-text{
+    font-family:'Tangerine',cursive;font-weight:700;font-size:clamp(2.2rem,3.6vw,3rem);
+    color:var(--iad-navy);line-height:1.25;margin:18px 0 22px;
+  }
+  .quote-attrib{font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;color:var(--gold);letter-spacing:.04em;text-transform:uppercase;}
+  .quote-context{font-size:.9rem;color:var(--ink-soft);max-width:560px;margin:14px 0 0;}
+  .painting-frame{
+    background:#fff;padding:14px 14px 20px;border-radius:6px;
+    box-shadow:0 24px 55px -20px rgba(0,0,0,.35);
+  }
+  .painting-frame img{width:100%;height:auto;display:block;border-radius:2px;}
+  .painting-caption{padding-top:12px;text-align:center;}
+  .painting-caption strong{display:block;font-family:'Sora',sans-serif;font-size:.82rem;color:var(--iad-navy);font-weight:700;}
+  .painting-caption span{display:block;font-size:.74rem;color:var(--ink-soft);margin-top:3px;}
+  @media (max-width:768px){ .quote-grid{grid-template-columns:1fr;} .quote-wrap{text-align:center;} .quote-context{margin:14px auto 0;} }
+
   .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center;}
   .about-photo{position:relative;justify-self:center;}
   .about-photo img{width:280px;height:280px;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:var(--shadow);}
@@ -204,7 +238,7 @@
   .cta-final{background:linear-gradient(120deg,var(--iad-blue),var(--iad-navy) 70%);border-radius:28px;color:#fff;padding:64px 48px;text-align:center;margin:0 24px;position:relative;overflow:hidden;}
   .cta-final::before{
     content:"";position:absolute;inset:0;
-    background-image:url('images/la-villa-bords-de-seine.jpg');
+    background-image:url('images/champrosay-demeure-xixe.jpg');
     background-size:cover;background-position:center;
     opacity:.3;filter:grayscale(.3);
     mask-image:radial-gradient(circle at 80% 20%, black 0%, transparent 75%);
@@ -337,19 +371,19 @@
     <p>Coteaux, forêt de Sénart et bords de Seine : le cadre qui a inspiré Delacroix et Daudet.</p>
   </div>
   <div class="marquee-track">
-    <img src="images/draveil-champrosay-grande-rue.jpg" alt="Champrosay, Grande Rue, carte postale ancienne">
-    <img src="images/draveil-chateau-moderne-1.jpg" alt="Château de Draveil aujourd'hui">
-    <img src="images/draveil-eglise-1.jpg" alt="Église de Draveil, carte postale ancienne">
-    <img src="images/la-villa-bords-de-seine.jpg" alt="Bords de Seine à Draveil, carte postale ancienne">
-    <img src="images/draveil-mairie-rue.jpg" alt="Mairie de Draveil, carte postale ancienne">
-    <img src="images/draveil-chateau-moderne-3.jpg" alt="Château de Draveil, vue moderne">
+    <img src="images/champrosay-grande-rue.jpg" alt="Champrosay, la Grande-Rue, carte postale ancienne">
+    <img src="images/champrosay-petite-eglise.jpg" alt="Champrosay, la petite église, rue Alphonse-Daudet, carte postale ancienne">
+    <img src="images/champrosay-maison-daudet.jpg" alt="Maison d'Alphonse Daudet à Champrosay aujourd'hui">
+    <img src="images/champrosay-rue-alphonse-daudet.jpg" alt="Champrosay, rue Alphonse-Daudet, carte postale ancienne">
+    <img src="images/champrosay-demeure-xixe.jpg" alt="Demeure historique de Champrosay">
+    <img src="images/champrosay-sanatorium.jpg" alt="Champrosay, le sanatorium, carte postale ancienne">
     <!-- doublon pour boucle infinie fluide -->
-    <img src="images/draveil-champrosay-grande-rue.jpg" alt="" aria-hidden="true">
-    <img src="images/draveil-chateau-moderne-1.jpg" alt="" aria-hidden="true">
-    <img src="images/draveil-eglise-1.jpg" alt="" aria-hidden="true">
-    <img src="images/la-villa-bords-de-seine.jpg" alt="" aria-hidden="true">
-    <img src="images/draveil-mairie-rue.jpg" alt="" aria-hidden="true">
-    <img src="images/draveil-chateau-moderne-3.jpg" alt="" aria-hidden="true">
+    <img src="images/champrosay-grande-rue.jpg" alt="" aria-hidden="true">
+    <img src="images/champrosay-petite-eglise.jpg" alt="" aria-hidden="true">
+    <img src="images/champrosay-maison-daudet.jpg" alt="" aria-hidden="true">
+    <img src="images/champrosay-rue-alphonse-daudet.jpg" alt="" aria-hidden="true">
+    <img src="images/champrosay-demeure-xixe.jpg" alt="" aria-hidden="true">
+    <img src="images/champrosay-sanatorium.jpg" alt="" aria-hidden="true">
   </div>
 </section>
 
@@ -398,26 +432,46 @@
     </div>
     <div class="villa-highlight reveal" style="margin-top:44px;">
       <div class="vh-card">
-        <img src="images/draveil-champrosay-grande-rue.jpg" alt="Champrosay, Grande Rue, carte postale ancienne">
-        <div class="vh-tag">La Grande Rue de Champrosay, début XXe siècle</div>
+        <img src="images/champrosay-petite-eglise.jpg" alt="Champrosay, la petite église, rue Alphonse-Daudet, carte postale ancienne">
+        <div class="vh-tag">La petite église, rue Alphonse-Daudet</div>
       </div>
       <div class="vh-card">
-        <img src="images/la-villa-bords-de-seine.jpg" alt="Bords de Seine à Draveil, carte postale ancienne">
-        <div class="vh-tag">Les bords de Seine qui ont inspiré Delacroix</div>
+        <img src="images/champrosay-rue-alphonse-daudet.jpg" alt="Champrosay, rue Alphonse-Daudet, carte postale ancienne">
+        <div class="vh-tag">La rue Alphonse-Daudet, début XXe siècle</div>
       </div>
       <div class="vh-card">
-        <img src="images/draveil-eglise-1.jpg" alt="Église de Draveil, carte postale ancienne">
-        <div class="vh-tag">Le patrimoine religieux du village (photo Draveil, en attendant vos photos de Champrosay)</div>
+        <img src="images/champrosay-demeure-xixe.jpg" alt="Demeure historique de Champrosay">
+        <div class="vh-tag">L'une des grandes demeures du hameau</div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="chateau-banner">
-  <img src="images/draveil-chateau-moderne-3.jpg" alt="Draveil, coteaux de Champrosay">
+  <img src="images/champrosay-maison-daudet.jpg" alt="Maison d'Alphonse Daudet à Champrosay aujourd'hui">
   <div class="chateau-banner-caption">
     <span class="eyebrow eyebrow-gold reveal">Delacroix, Daudet et leurs hôtes</span>
     <h2 class="reveal">Un hameau qui a inspiré parmi les plus grands noms des lettres et de la peinture</h2>
+  </div>
+</section>
+
+<section class="quote-band">
+  <div class="quote-brushstroke" aria-hidden="true"></div>
+  <span class="quote-mark" aria-hidden="true">“</span>
+  <div class="wrap quote-grid reveal">
+    <div class="quote-wrap">
+      <span class="eyebrow" style="color:var(--gold);">Alphonse Daudet, à propos de sa maison de Champrosay</span>
+      <p class="quote-text">Nous habitons entre la Seine et la forêt de Sénart une petite maisonnette où il y a deux chambres en trop.</p>
+      <span class="quote-attrib">— Lettre de l'été 1868</span>
+      <p class="quote-context">C'est dans ce hameau, ancienne demeure d'Eugène Delacroix, que Daudet s'installe à son mariage. Le peintre y avait lui-même séjourné à partir de 1844, peignant sur place plusieurs de ses toiles, dont <em>Paysage à Champrosay</em>, reproduit ici.</p>
+    </div>
+    <div class="painting-frame">
+      <img src="images/delacroix-paysage-champrosay.jpg" alt="Eugène Delacroix, Paysage à Champrosay, vers 1849">
+      <div class="painting-caption">
+        <strong>Eugène Delacroix — Paysage à Champrosay</strong>
+        <span>Vers 1849, huile sur toile — Musée d'art moderne André Malraux, Le Havre</span>
+      </div>
+    </div>
   </div>
 </section>
 
