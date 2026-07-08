@@ -248,7 +248,7 @@
   .zones{background:var(--iad-navy);color:#fff;}
   .zones .section-head h2{color:#fff;}
   .zones .section-head p{color:rgba(255,255,255,.65);}
-  .zone-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .zone-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
   .zone-card{
     background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;
     padding:22px 18px;text-align:center;transition:.25s;
@@ -437,6 +437,7 @@
           <option value="3100">Vigneux-sur-Seine</option>
           <option value="2300">Ris-Orangis</option>
           <option value="3300">Juvisy-sur-Orge</option>
+          <option value="3305">Soisy-sur-Seine</option>
           <option value="other">Autre commune</option>
         </select>
       </div>
@@ -603,6 +604,7 @@
       <a href="vigneux-sur-seine.html" class="zone-card" style="display:block;text-decoration:none;color:inherit;"><h4>Vigneux-s-Seine →</h4><div class="price">3 100 €</div><div class="unit">par m² · page dédiée</div></a>
       <div class="zone-card"><h4>Ris-Orangis</h4><div class="price">2 300 €</div><div class="unit">par m²</div></div>
       <div class="zone-card"><h4>Juvisy-s-Orge</h4><div class="price">3 300 €</div><div class="unit">par m²</div></div>
+      <a href="soisy-sur-seine.html" class="zone-card" style="display:block;text-decoration:none;color:inherit;"><h4>Soisy-s-Seine →</h4><div class="price">3 300 €</div><div class="unit">par m² · page dédiée</div></a>
     </div>
   </div>
 </section>
@@ -734,6 +736,7 @@
         <a href="champrosay.html">Champrosay</a>
         <a href="montgeron.html">Montgeron</a>
         <a href="vigneux-sur-seine.html">Vigneux-sur-Seine</a>
+        <a href="soisy-sur-seine.html">Soisy-sur-Seine</a>
         <a href="#secteurs">Ris-Orangis</a>
       </div>
       <div>
@@ -769,7 +772,7 @@
 
 <script>
 
-  const prices = {"3150":"Draveil","3550":"Montgeron","3100":"Vigneux-sur-Seine","2300":"Ris-Orangis","3300":"Juvisy-sur-Orge"};
+  const prices = {"3150":"Draveil","3550":"Montgeron","3100":"Vigneux-sur-Seine","2300":"Ris-Orangis","3300":"Juvisy-sur-Orge","3305":"Soisy-sur-Seine"};
   const communeSelect = document.getElementById('commune');
   const surfaceInput = document.getElementById('surface');
   const resultat = document.getElementById('resultat');
